@@ -1,0 +1,80 @@
+<html>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+
+        function Greeting(){
+
+          const students = ['Aziz','Erfan','Andryan','Lumula']
+
+          return (
+          <>
+          <h1> Halo selamat belajar React js di Multimatics</h1>
+          <ul>
+              {students.map((student) => (
+                  <li>{student}</li>
+              ))}
+          </ul>
+          </>
+
+        );
+      }
+
+      function Greeting2(){
+
+          const students = [
+          {
+            id : 1,
+            name : 'Aziz',
+            age : 20,
+            city : 'Bekasi'
+          },
+          {
+            id : 2,
+            name : 'Erfa',
+            age : 22,
+            city: 'Tangerang'
+          },
+          {
+            id : 3,
+            name :'andryan',
+            age : 20,
+            city : 'Depok'
+          },
+           {
+            id : 4,
+            name : "Lumula",
+            age : 20,
+            city : 'Bogor'
+          }
+          ]
+
+          return (
+            <>
+                <h1> Selamt datang di Multimatics</h1>
+                <ul>
+                    {students.map((student) => (
+                        <li key={student.id}>{student.name} - {student.age} - {student.city}</li>
+                    ))}
+                </ul>
+            </>
+          );
+      }
+
+
+        root.render(
+            <>
+            <Greeting2 />
+            <Greeting />
+            </>
+        );
+    </script>
+  </body>
+</html>

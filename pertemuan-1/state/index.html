@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+        const root = document.getElementById('root');
+
+
+        function Header(){
+
+        return (
+          <>
+          <h1> Mari belajar bersama Multimatics </h1>;
+          <img src="img/react.png" alt="react" />
+          </>
+        );
+      }
+
+      function HomePage(){
+         const [likes, setLikes] = React.useState(0);
+
+          function handleLike (){
+          setLikes(likes + 1);
+          }
+
+          function handleUnLike (){
+            if (likes > 0 ) {
+            setLikes(likes - 1);
+          }
+        }
+
+          function handleResetLike (){
+            setLikes(0)
+          }
+
+        return (
+        <div>
+          <button onClick={handleLike}>+</button>
+          <button>{likes} </button>
+           <button onClick={handleUnLike}>-</button>
+        <br></br>
+        <br></br>
+           <button onClick={handleResetLike}> Reset </button>
+
+
+        </div>
+        );
+
+      }
+      const app = ReactDOM.createRoot(root);
+      app.render(< HomePage />);
+    </script>
+  </body>
+</html>

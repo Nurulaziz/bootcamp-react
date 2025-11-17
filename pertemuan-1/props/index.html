@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+
+      function Greeting({name, learning, org}) {
+          return <h1> Halo selamat datang {name}, Selamat belajar {learning} Di {org? org : "Rumah aja"} </h1>
+      }
+
+      root.render(
+          <Greeting name="Aziz" learning="React"/>
+      );
+    </script>
+  </body>
+</html>
